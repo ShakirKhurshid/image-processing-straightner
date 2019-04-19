@@ -75,7 +75,7 @@ for c in cnts:
 warped = four_point_transform(image, box)
 cv2.imwrite('warped.jpg', warped)
  
-# show the original and warped images
+# show the original and warped images//.
 cv2.imshow("Original", image)
 cv2.imshow("Warped", warped)
 cv2.waitKey(0)
