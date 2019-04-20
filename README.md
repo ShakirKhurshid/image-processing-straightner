@@ -20,7 +20,7 @@ To check your pythin version  type in command line
 # Running Tests
 
 Start of by feeding an image : We start of with a sample *image courtesy google.com , and then resize the image
-![Sample Image of a License Plate](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/11.jpg) *sample image of a license plate
+![Sample Image of a License Plate](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/11.jpg) *sample image of a license plate*
 
 Then we gray out the image for better pre processing:
 ```gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) ```
@@ -31,20 +31,23 @@ Then Clipped Local Adaptive Histogram Equalization (CLAHE) is applied to get bet
    cl1 = clahe.apply(gray) 
    cv2.imshow('c1',cl1)
 ```
-![Clahe](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/CLAHE.jpg)*clahe  
+![Clahe](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/CLAHE.jpg)*clahe* 
 
 Then Thresholding is applied to get the binary image :``` thresh = cv2.threshold(cl1, 165, 255,cv2.THRESH_BINARY)[1]```
-![Threshold](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Threshold.jpg)*threshold
+![Threshold](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Threshold.jpg)  
+*threshold*
 
 Find countours in the thresholded image ,and sort the contours in decreasing order  
 
 ``` cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10] #Stores the biggest 10 contours```  
 
 In contours whose area is >5000 as license plate will be one of the biggest contour in the image , draw a bounding rectangle ```rect = cv2.minAreaRect(c)``` around the contour and get  the coordinates of the bounding rectangle using ``` box = cv2.boxPoints(rect)```  
-![Detected License Plate](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Detected.PNG)*detectedLicense Plate
+![Detected License Plate](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Detected.PNG)  
+*detectedLicense Plate*
 
 Now the four_point_transformed function is called which take in the image and the coordinates of the bounding rectange as parameteres and performs the transformation, to give the top down view of the ROI and thus straightenes the License Plate  
-![Transformed](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Transformed.jpg)*transformed  
+![Transformed](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Transformed.jpg)  
+*transformed*  
 
 This code worked for almost all license plates 
 >can be used to detect and straigten a document in an image
