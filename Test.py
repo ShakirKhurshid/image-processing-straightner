@@ -47,6 +47,8 @@ for c in cnts:
     if cv2.contourArea(c)  < 5000:
         continue
     #print("area",cv2.contourArea(c))
+
+    #This Shows the Straightened rectangle around the contour
     #(x, y, w, h) = cv2.boundingRect(c)
     #cv2.rectangle(image, (x,y), (x+w,y+h), (0, 255, 0), 2)
 
