@@ -26,6 +26,7 @@ Then we gray out the image for better pre processing:
 ```gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) ```
 
 Then Clipped Local Adaptive Histogram Equalization (CLAHE) is applied to get better contrast.CLAHE is an advancement on AHE. AHE has a drawback of overamplifying noise. CLAHE limits the amplification by clipping the histogram at a predefined value (called clip limit) before computing the CDF.  
+
 ```clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))  
    cl1 = clahe.apply(gray) 
    cv2.imshow('c1',cl1)
@@ -35,13 +36,14 @@ Then Clipped Local Adaptive Histogram Equalization (CLAHE) is applied to get bet
 ![Clahe](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/CLAHE.jpg)
 
 Then Thresholding is applied to get the binary image :  
-``` thresh = cv2.threshold(cl1, 165, 255,cv2.THRESH_BINARY)[1]  
-```
+
+``` thresh = cv2.threshold(cl1, 165, 255,cv2.THRESH_BINARY)[1]```
 ![Threshold](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Threshold.jpg)
 
-Find countours in the thresholded image ,and sort the contours in decreasing order
-``` cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10] #Stores the biggest 10 contours
-```
+Find countours in the thresholded image ,and sort the contours in decreasing order  
+
+``` cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10] #Stores the biggest 10 contours```  
+
 In contours whose area is >5000 as license plate will be one of the biggest contour in the image , draw a bounding rectangle ```rect = cv2.minAreaRect(c)``` around the contour and get  the coordinates of the bounding rectangle using ``` box = cv2.boxPoints(rect)```  
 ![Detected License Plate](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Detected.PNG)
 
@@ -52,9 +54,7 @@ This code worked for almost all license plates
 >can be used to detect and straigten a document in an image
 
 
-# AUTHORS
-Shakir Khurshid  
-Mahavir Trivedi
+
 
 
 
