@@ -35,9 +35,8 @@ Then Clipped Local Adaptive Histogram Equalization (CLAHE) is applied to get bet
 ![Clahe](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/CLAHE.jpg)
 
 Then Thresholding is applied to get the binary image :  
-```thresh = cv2.threshold(cl1, 165, 255,cv2.THRESH_BINARY)[1]
-cv2.imshow('thresh',thresh)
-```  
+``` thresh = cv2.threshold(cl1, 165, 255,cv2.THRESH_BINARY)[1]  
+```
 ![Threshold](https://github.com/ShakirKhurshid/Transformer/blob/master/Sample_Pictures/Test/Threshold.jpg)
 
 Find countours in the thresholded image ,and sort the contours in decreasing order
