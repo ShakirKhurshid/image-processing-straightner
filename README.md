@@ -53,6 +53,11 @@ Now the four_point_transformed function is called which take in the image and th
 This code worked for almost all license plates 
 >can be used to detect and straigten a document in an image
 
+# EXECUTION
+execute the file ' run_transformer.py'
+```python run_transformer.py```
+
+
 
 
 
