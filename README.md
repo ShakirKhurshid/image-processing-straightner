@@ -8,7 +8,7 @@ The aim of this project was to straigten tilted licence plates for easy License 
 2.*Open CV* - OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at real-time computer vision. In simple language it is library used for Image Processing. It is mainly used to do all the operation related to Images.
 3.*Numpy*  
 4.*imutils* -  Provides convenient functions to make basic image processing functions such as translation, rotation, resizing, etc with OpenCV  
-To check your pythin version  type in command line  
+To check your python version  type in command line  
  ```python --version```  
 ## Installing
  To install openCV type  
