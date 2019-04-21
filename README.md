@@ -55,7 +55,8 @@ This code worked for almost all license plates
 
 
 # How to use
-execute the file ' run_transformer.py'
+execute the file ' run_transformer.py' iin the command line  
+
 ```python Run_transformer.py```
 
 
