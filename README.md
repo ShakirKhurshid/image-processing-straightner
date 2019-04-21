@@ -54,6 +54,13 @@ This code worked for almost all license plates
 >can be used to detect and straigten a document in an image
 
 
+# How to use
+execute the file ' run_transformer.py' iin the command line  
+
+```python Run_transformer.py```
+
+
+
 
 
 
