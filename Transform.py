@@ -2,7 +2,7 @@
 """
 Created on Fri Mar 29 16:06:00 2019
 
-@author: Summer Frost
+@author: Shakir Khurshid
 """
 
 import numpy as np
